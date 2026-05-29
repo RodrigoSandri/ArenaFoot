@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Chuteira } from '../../models/chuteira';
+import { ChuteiraService } from '../../services/chuteira.service';
 
 @Component({
   selector: 'app-chuteira-list',
@@ -8,18 +10,27 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './chuteira-list.css',
 })
 export class ChuteiraList {
-  chuteiras = [
-    {
-      id: 1, 
-      nome:"Chuteira Nike Air Zoom Mercurial Vapor 16 Elite FG",
-      descricao:"Chuteira Nike Air Zoom Mercurial Vapor",
-      preco: 3500
-    }, 
-    {
-      id: 2, 
-      nome:"Chuteira Campo Adidas Predador League",
-      descricao: "Chuteira de couro",
-      preco: 4000
-    }
-  ]
+  private readonly chuteirasService = inject(ChuteiraService);
+
+  chuteiras: Chuteira[] = [];
+  carregando: boolean = false;
+
+  ngOnInit(): void {
+    this.carregarChuteiras();
+  }
+
+  carregarChuteiras(): void {
+    this.carregando = true;
+
+    this.chuteirasService.listar().subscribe({
+      next: (dados) => {
+        this.chuteiras = dados;
+        this.carregando = false;
+      },
+      error: (error) => {
+        console.error('Erro ao carregar chuteiras:', error);
+        this.carregando = false;
+      }
+    });
+  }
 }

@@ -1,0 +1,15 @@
+{
+    "chuteiras": [
+        {
+    "id": 1,
+    "nome": " Chuteira Nike Air Zoom Mercurial Vapor",
+    "descricao": "Chuteira Nike Air Zoom Mercurial Vapor 16 Elite Vini Jr Campo",
+    "preco": 4000.00
+     },
+     {
+        "id": 2,
+        "nome": "Chuteira Society de Língua Dobrável Predator Club Kak",
+        "descricao": "Chuteira Society Adidas Predator Club LIN Kaka"
+     }
+  ]
+}
