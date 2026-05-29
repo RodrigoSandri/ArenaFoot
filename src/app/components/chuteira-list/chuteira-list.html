@@ -1,0 +1,31 @@
+<section class="card">
+    <h2>Chuteiras cadastradas</h2>
+    @if (chuteiras.length === 0){
+        <p>Nenhuma chuteira cadastrada.</p>
+    } @else {
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Ações</th>
+                </tr>
+             </thead>
+
+             <tbody>
+                @for (chuteira of chuteiras; track chuteira.id){
+                    <td class="td">{{ chuteira.id }}</td>
+                    <td class="td">{{ chuteira.nome }} </td>
+                    <td class="td">{{ chuteira.descricao }}</td>
+                    <td class="td">{{ chuteira.preco | currency: 'BRL'}}</td>
+                    <td>
+                        <button type="button">Editar</button>
+                        <button type="button">Excluir</button>
+                    </td>
+                }
+             </tbody>
+        </table>
+    }
+</section> 
