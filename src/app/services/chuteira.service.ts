@@ -18,11 +18,11 @@ export class ChuteiraService {
     return this.http.post<Chuteira>(this.apiurl, chuteira);
   }
 
-  atualizar(chuteira: Chuteira, id: number) : Observable<Chuteira> {
+  atualizar(chuteira: Chuteira, id: number | string) : Observable<Chuteira> {
     return this.http.put<Chuteira>(`${this.apiurl}/${id}`, chuteira); 
   }
 
-  excluir(id: number) : Observable<void> {
+  excluir(id: number | string) : Observable<void> {
     return this.http.delete<void>(`/${id}`);
   }
 }

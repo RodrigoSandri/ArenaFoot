@@ -1,5 +1,5 @@
 export interface Chuteira {
-    id: number;
+    id?: number | string;
     nome: string;
     descricao: string;
     preco: number;
