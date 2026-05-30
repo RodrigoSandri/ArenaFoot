@@ -1,13 +1,6 @@
 <section class="card">
     <h2>Chuteiras cadastradas</h2>
-
-    @if(carregando) {
-        <p>carregando Chuteiras...</p>
-    }
-
-    @if (chuteiras.length === 0 && !carregando){
-        <p>Nenhuma chuteira cadastrada.</p>
-    } @else {
+    @else {
         <table>
             <thead>
                 <tr>
@@ -34,5 +27,12 @@
                 }
              </tbody>
         </table>
+    }
+    @if(carregando) {
+        <p>carregando Chuteiras...</p>
+    }
+
+    @if (chuteiras.length === 0 && !carregando){
+        <p>Nenhuma chuteira cadastrada.</p>
     }
 </section> 
