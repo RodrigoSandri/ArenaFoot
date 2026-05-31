@@ -1,4 +1,10 @@
-import { Component, EventEmitter, inject, output, Output, ɵinjectChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  inject,
+  Output,
+  ChangeDetectorRef
+} from '@angular/core';
 import { ChuteiraService } from '../../services/chuteira.service';
 import { Chuteira } from '../../models/chuteira';
 
@@ -20,18 +26,24 @@ export class ChuteiraForm {
 
   @Output() salvo = new EventEmitter<void>();
 
-  private readonly cdr = inject(ɵinjectChangeDetectorRef);
+  private readonly cdr = inject(ChangeDetectorRef);
   private readonly chuteiraService = inject(ChuteiraService);
-
 
   salvar(): void {
     this.chuteiraService.criar(this.chuteira).subscribe({
       next: () => {
-        this.chuteira = { nome: '', 
-          descricao: '', preco: 0}
-          this.salvo.emit();
-          this.cdr.detectChanges();
-      }    
-    })
+        this.chuteira = {
+          nome: '',
+          descricao: '',
+          preco: 0,
+        };
+
+        this.salvo.emit();
+        this.cdr.detectChanges();
+      },
+      error: (erro) => {
+        console.error('Erro ao salvar', erro);
+      },
+    });
   }
 }
