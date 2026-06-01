@@ -1,17 +1,13 @@
-import {
-  Component,
-  EventEmitter,
-  inject,
-  Output,
-  ChangeDetectorRef
-} from '@angular/core';
+import {Component, EventEmitter, inject, Output, ChangeDetectorRef } from '@angular/core';
 import { ChuteiraService } from '../../services/chuteira.service';
 import { Chuteira } from '../../models/chuteira';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-chuteira-form',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './chuteira-form.html',
   styleUrl: './chuteira-form.css',
 })

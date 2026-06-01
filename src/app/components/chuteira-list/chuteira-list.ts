@@ -11,8 +11,7 @@ import { ChuteiraService } from '../../services/chuteira.service';
 })
 export class ChuteiraList {
   private readonly chuteirasService = inject(ChuteiraService);
-
-  chuteiras: Chuteira[] = [];
+chuteiras: Chuteira[] = [];
   carregando: boolean = false;
 
   ngOnInit(): void {
@@ -21,7 +20,6 @@ export class ChuteiraList {
 
   carregarChuteiras(): void {
     this.carregando = true;
-
     this.chuteirasService.listar().subscribe({
       next: (dados) => {
         this.chuteiras = dados;

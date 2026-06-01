@@ -1,6 +1,5 @@
 <app-navbar></app-navbar>
-
 <main class="page">
-    <app-chuteira-form></app-chuteira-form>
-    <app-chuteira-list></app-chuteira-list>
+    <app-chuteira-form></app-chuteira-form (salvo)="lista.carregarChuteiras()" />
+    <app-chuteira-list></app-chuteira-list #lista/>
 </main>
