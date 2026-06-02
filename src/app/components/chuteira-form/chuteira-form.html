@@ -4,17 +4,30 @@
     <form class="form" (ngSubmit)="salvar()">
         <label>
             Nome
-            <input type="text" nome="nome" placeholder="Ex: NIKE Air Zomm Mercurial Vapor" [(ngModel)]="chuteira.nome"/>
+            <input
+                type="text"
+                name="nome"
+                placeholder="Ex: NIKE Air Zoom Mercurial Vapor"
+                [(ngModel)]="chuteira.nome" />
         </label>
+
         <label>
             Descrição
-            <input name="descricao" [(ngModel)]="chuteira.descricao" placeholder="Ex: Chuteira Nike Air Zoom Mercurial Vapor 16 Elite Vini Jr Campo"/>
+            <input
+                name="descricao"
+                [(ngModel)]="chuteira.descricao"
+                placeholder="Ex: Chuteira Nike Air Zoom Mercurial Vapor 16 Elite Vini Jr Campo" />
         </label>
+
         <label>
-            Preco
-            <input [(ngModel)]="chuteira.Preco" type="number" placeholder="3500"/>
+            Preço
+            <input
+                name="preco"
+                [(ngModel)]="chuteira.preco"
+                type="number"
+                placeholder="3500" />
         </label>
+
         <button type="submit">Cadastrar</button>
     </form>
-
 </section>
