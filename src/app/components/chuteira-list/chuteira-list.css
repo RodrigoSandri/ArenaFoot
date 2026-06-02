@@ -1,78 +1,59 @@
 .card {
-    padding: 20px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #fff;
+  padding: 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
 }
 
-.h2 {
-    margin-top: 0;
+h2 {
+  margin-top: 0;
 }
 
-.form {
-    display: grid;
-    gap: 12px;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-label {
-    display: grid;
-    gap: 6px;
-    font-weight: 700;
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
 }
 
-.input, textarea {
-    padding: 10px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font: inherit
+th {
+  background: #f3f4f6;
 }
 
-.button {
-  width: fit-content;
-  padding: 10px 14px;
-  border: 0;
+/* Coluna de ações */
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+/* Botão editar */
+.btn-editar {
+  padding: 8px 12px;
+  border: none;
   border-radius: 6px;
   background: #2563eb;
-  color: #fff;
-  font-weight: 700;
-  cursor: pointer;       
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.card {
-    padding: 20px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    background: #fff;
+/* Botão excluir */
+.btn-excluir {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #dc2626;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.h2 {
-    margin-top: 0;
+.btn-editar:hover,
+.btn-excluir:hover {
+  opacity: 0.9;
 }
-
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.th,td {
-    padding: 10px;
-    border-bottom: 1px solid #e5e7eb;
-    text-align: left;
-}
-
-.th {
-    background: #f3f4f6;
-}
-
-.button {
-    margin-right: 8px;
-    padding: 7px 10px;
-    border: 0;
-    border-radius: 6px;
-    background: #4b5563;
-    color: #fff;
-    cursor: pointer;
-}
-
-
-
