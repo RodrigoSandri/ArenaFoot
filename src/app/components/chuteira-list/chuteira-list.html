@@ -25,8 +25,8 @@
             <td class="td">{{ chuteira.descricao }}</td>
             <td class="td">{{ chuteira.preco | currency:'BRL' }}</td>
             <td>
-              <button type="button">Editar</button>
-              <button type="button">Excluir</button>
+              <button type="button" (click)="editar(chuteira)">Editar</button>
+              <button type="button" (click)="excluir(chuteira)">Excluir</button>
             </td>
           </tr>
         }
